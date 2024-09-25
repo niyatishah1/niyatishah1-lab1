@@ -1,6 +1,5 @@
 public class Rotor {
 
-    
     private String rotorValues;
     private char startChar;
         
@@ -8,13 +7,15 @@ public class Rotor {
         this.rotorValues = new String(v);
         this.startChar = c;
         
-        while(!this.rotate());
+        while(!this.rotate()){
+            
+        }
             
     }
     
     public boolean rotate(){
         //TODO
-               
+        rotorValues = rotorValues.charAt(startChar);
     }
     
 
@@ -27,3 +28,8 @@ public class Rotor {
     }
 }
     
+/*
+ * Y # B D F H J L N P R T V X Z A C E G I K M O Q S U W
+ * # E J O T Y C H M R W A F K P U Z D I N S X B G L Q V
+ * X Z V R I F J B L M A O P S C Y U T Q E # N W D K H G
+ */
