@@ -29,7 +29,7 @@ public class Rotor {
         //TODO
         return rotorValues.charAt(idx);
     }
-}
+} 
     
 /*
  * Y # B D F H J L N P R T V X Z A C E G I K M O Q S U W

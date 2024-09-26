@@ -21,14 +21,35 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
-
+        String decrypted = "";
+        for(int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+            int firstindex = rotors[2].indexOf(c);
+            char outer = rotors[0].charAt(firstindex);
+            int middleindex = rotors[1].indexOf(outer);
+            char last = rotors[0].charAt(middleindex);
+            decrypted = decrypted + last;
+            rotate();
+        }
+        return decrypted;
+        
     }
 
 
     
     public String encrypt(String message){
         //TODO
-        
+        String encrypted = "";
+        for(int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+            int firstindex = rotors[0].indexOf(c);
+            char outer = rotors[2].charAt(firstindex);
+            int middleindex = rotors[1].indexOf(outer);
+            char last = rotors[2].charAt(middleindex);
+            encrypted = encrypted + last;
+            rotate();
+        }
+        return encrypted;
     }
 
     
@@ -41,3 +62,21 @@ public class Enigma{
     }
     
 }
+
+
+
+
+
+
+
+
+/*String decrypted = "";
+        for(int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+            c = rotors[2].charAt(rotors[2].indexOf(c));
+            c = rotors[1].charAt(rotors[1].indexOf(c));
+            c = rotors[0].charAt(rotors[0].indexOf(c));
+            decrypted += c;
+            rotate();
+        }
+        return decrypted; */
