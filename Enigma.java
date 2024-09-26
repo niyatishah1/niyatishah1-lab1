@@ -21,12 +21,14 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
+
     }
 
 
     
     public String encrypt(String message){
         //TODO
+        
     }
 
     
