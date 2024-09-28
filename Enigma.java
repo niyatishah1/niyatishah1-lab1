@@ -24,15 +24,14 @@ public class Enigma{
         String decrypted = "";
         for(int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
-            int firstindex = rotors[2].indexOf(c);
-            char outer = rotors[0].charAt(firstindex);
-            int middleindex = rotors[1].indexOf(outer);
-            char last = rotors[0].charAt(middleindex);
+            int outerindex = rotors[2].indexOf(c);
+            char middle = rotors[1].charAt(outerindex);
+            outerindex = rotors[2].indexOf(middle);
+            char last = rotors[0].charAt(outerindex);
             decrypted = decrypted + last;
             rotate();
         }
         return decrypted;
-        
     }
 
 
